@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 40, 20 )
+scale = Vector2( 2, 2 )
+z_index = -1
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Grass"]
+position = Vector2( 0.349648, 0.524471 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Grass/StaticBody2D"]
+position = Vector2( -8.54375, -8.97093 )
+polygon = PoolVector2Array( 9.65035, 19.4755, 19.6504, 9.47553, 29.6504, 9.47553, 39.6504, 19.4755, 39.6504, 29.4755, 29.6504, 39.4755, 19.6504, 39.4755, 9.65035, 29.4755, 9.65035, 19.4755 )
+
+[node name="Walk" type="Sprite" parent="."]
+position = Vector2( 280, 120 )
+scale = Vector2( 4, 4 )
+z_index = -1
+z_as_relative = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
