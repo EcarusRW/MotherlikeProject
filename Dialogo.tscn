@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Dialogo.gd" type="Script" id=1]
 [ext_resource path="res://fonts/prstart.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://sound/voice.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -54,7 +53,15 @@ margin_right = 666.0
 margin_bottom = 181.0
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
 volume_db = -17.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 320.675
+margin_top = 327.356
+margin_right = 360.675
+margin_bottom = 351.356
+text = "En proceso"
+
+[node name="SlideDown" type="Tween" parent="."]
 
 [connection signal="timeout" from="Panel/SlowText" to="." method="Letra_a_letra"]

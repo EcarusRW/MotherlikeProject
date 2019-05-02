@@ -19,7 +19,7 @@ func _physics_process(_delta):
 		direccion += Vector2(-1, 0)
 	if Input.is_action_pressed("ui_right"):
 		direccion += Vector2(1, 0)
-	
+
 	#Sprint
 	if !exhausto:
 		if Input.is_action_pressed("ui_sprint") && direccion!=Vector2(0,0):
@@ -35,17 +35,31 @@ func _physics_process(_delta):
 			exhausto=true
 			velocidad=100
 			$CooldownTimer.start()
-	
+
 	direccion= direccion.normalized()*velocidad
 	direccion=move_and_slide(direccion)
 
 func _process(_delta):
+	var ANI=$Pasos/AnimationPlayer
+	var state = "Idle"
+	if Input.is_action_pressed("ui_up"):
+		state = "Walkup"
+	if Input.is_action_pressed("ui_down"):
+		state = "Walkdown"
+	if Input.is_action_pressed("ui_left"):
+		state = "Walkleft"
+	if Input.is_action_pressed("ui_right"):
+		state = "Walkright"
+	if state!="Idle":
+		ANI.play(state)
+	else:
+		ANI.stop()
 	pass
-	
+
 func _tomar_un_respiro():
 	exhausto=false
 	cansancio=0
 	velocidad=200
-	
+
 func _teletransporte(posVector):
 	position=posVector

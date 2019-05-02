@@ -1,12 +1,13 @@
 extends Node
 
 var texto
-var contexto="debug3"
+var contexto="debug2"
 var fin=0
 var current
 var linea=0
 var dialogos
 var listo_salto=false
+var endDialog=false
 
 func _ready():
 	var archivo=File.new()
@@ -17,6 +18,8 @@ func _ready():
 	$Panel/Nombre.text=current[linea][0]#Set titulo y texto
 	# 0=Nombre 1=Texto
 	# 2= Futuro set de talksprite?
+	$SlideDown.interpolate_property($Label,"position",Vector2(0, 0), Vector2(100, 100), 1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$SlideDown.start()
 
 func _process(delta):
 	$Panel/Dialog.text=texto.substr(0,fin)
@@ -28,6 +31,12 @@ func _process(delta):
 			texto=current[linea][1]
 			$Panel/Nombre.text=current[linea][0]#Set titulo y texto
 			fin=0
+		else:
+			if linea==len(current)-1&&!endDialog:
+				$Panel/Status.text="-->"
+				if  Input.is_action_just_pressed("ui_accept"):
+					endDialog=true
+					$Label.text="End"
 	else:
 		$Panel/Status.text="..."
 
