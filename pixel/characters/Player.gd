@@ -1,12 +1,25 @@
 extends KinematicBody2D
 
-var velocidad=200
-var acel=20
-var cansancio=0
-var exhausto=false
+onready var animations=$Pasos/AnimationPlayer
+var velocidad
+var acel
+var cansancio
+var exhausto
+var validMoveset=[
+"Walkup",
+"Walkdown",
+"Walkleft",
+"Walkright",
+"Walkupleft",
+"Walkupright",
+"Walkdownleft",
+"Walkdownright"]
 
 func _ready():
-	pass
+	exhausto=false
+	cansancio=0
+	acel=5
+	velocidad=100
 
 func _physics_process(_delta):
 	#Movimiento
@@ -23,43 +36,42 @@ func _physics_process(_delta):
 	#Sprint
 	if !exhausto:
 		if Input.is_action_pressed("ui_sprint") && direccion!=Vector2(0,0):
-			if velocidad<=500:
+			if velocidad<=300:
 				velocidad+=acel
 			if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 				cansancio+=1
 		elif cansancio>0:
-			if velocidad>200:
+			if velocidad>100:
 				velocidad-=acel
 			cansancio-=1
 		if cansancio>=200:
 			exhausto=true
-			velocidad=100
+			velocidad=50
 			$CooldownTimer.start()
-
 	direccion= direccion.normalized()*velocidad
 	direccion=move_and_slide(direccion)
-
-func _process(_delta):
-	var ANI=$Pasos/AnimationPlayer
-	var state = "Idle"
+func _input(event):
+	var state = "Walk"
 	if Input.is_action_pressed("ui_up"):
-		state = "Walkup"
+		state += "up"
 	if Input.is_action_pressed("ui_down"):
-		state = "Walkdown"
+		state += "down"
 	if Input.is_action_pressed("ui_left"):
-		state = "Walkleft"
+		state += "left"
 	if Input.is_action_pressed("ui_right"):
-		state = "Walkright"
-	if state!="Idle":
-		ANI.play(state)
+		state += "right"
+	if state!="Idle" && state in validMoveset:
+		animations.play(state)
 	else:
-		ANI.stop()
+		animations.stop()
+		
+func _process(_delta):
 	pass
 
 func _tomar_un_respiro():
 	exhausto=false
 	cansancio=0
-	velocidad=200
+	velocidad=100
 
 func _teletransporte(posVector):
 	position=posVector

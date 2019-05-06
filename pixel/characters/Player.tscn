@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://pixel/characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://pixel/characters/Somnia/Somnia movimiento andar guía.png" type="Texture" id=2]
@@ -14,14 +14,46 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.16118, 0.310506, 0.518001, 0.688499, 0.826331 ),
+"times": PoolRealArray( 0, 0.155067, 0.336995, 0.5017, 0.680349, 0.856895 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 29, 30, 31, 32, 33, 34 ]
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "Walkleft"
+resource_name = "Walkdownleft"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.154075, 0.327586, 0.485737, 0.651097, 0.844984 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 22, 23, 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walkdownright"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00611283, 0.17931, 0.35862, 0.521628, 0.696863, 0.87006 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 36, 37, 38, 39, 40, 41 ]
+}
+
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -36,8 +68,7 @@ tracks/0/keys = {
 "values": [ 15, 16, 17, 18, 19, 20 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walkright"
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -52,7 +83,7 @@ tracks/0/keys = {
 "values": [ 43, 44, 45, 46, 47, 48 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -67,8 +98,38 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 5.90929, 3.95581 )
+[sub_resource type="Animation" id=7]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00407522, 0.171159, 0.334168, 0.507365, 0.664261, 0.845609 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 8, 9, 10, 11, 12, 13 ]
+}
+
+[sub_resource type="Animation" id=8]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.173354, 0.324451, 0.485737, 0.653135, 0.81442 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 50, 51, 52, 53, 54, 55 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 4.36783, 2.85122 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -78,21 +139,24 @@ position = Vector2( -0.454383, 27.6936 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 7
-frame = 46
+frame = 33
 region_enabled = true
 region_rect = Rect2( 0, 0, 287, 329 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pasos"]
 anims/Walkdown = SubResource( 1 )
-anims/Walkleft = SubResource( 2 )
-anims/Walkright = SubResource( 3 )
-anims/Walkup = SubResource( 4 )
+anims/Walkdownleft = SubResource( 2 )
+anims/Walkdownright = SubResource( 3 )
+anims/Walkleft = SubResource( 4 )
+anims/Walkright = SubResource( 5 )
+anims/Walkup = SubResource( 6 )
+anims/Walkupleft = SubResource( 7 )
+anims/Walkupright = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -1.64299, 27.5265 )
+position = Vector2( 0.74028, 35.4708 )
 scale = Vector2( 2.32353, 3.4194 )
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 3.73
@@ -102,5 +166,9 @@ one_shot = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_tomar_un_respiro"]
