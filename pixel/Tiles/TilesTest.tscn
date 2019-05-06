@@ -1,27 +1,29 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://pixel/Tiles/test_tileset.png" type="Texture" id=1]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Grass" type="Sprite" parent="."]
-position = Vector2( 40, 20 )
+position = Vector2( 29.1833, 26.4618 )
 scale = Vector2( 2, 2 )
 z_index = -1
+texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 64, 96, 32, 32 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Grass"]
-position = Vector2( 0.349648, 0.524471 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Grass/StaticBody2D"]
-position = Vector2( -8.54375, -8.97093 )
-polygon = PoolVector2Array( 9.65035, 19.4755, 19.6504, 9.47553, 29.6504, 9.47553, 39.6504, 19.4755, 39.6504, 29.4755, 29.6504, 39.4755, 19.6504, 39.4755, 9.65035, 29.4755, 9.65035, 19.4755 )
+region_rect = Rect2( 48, 16, 16, 16 )
 
 [node name="Walk" type="Sprite" parent="."]
-position = Vector2( 280, 120 )
-scale = Vector2( 4, 4 )
+position = Vector2( 79.267, 42.4397 )
+scale = Vector2( 2, 2 )
 z_index = -1
 z_as_relative = false
+texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 64, 32, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walk"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walk/StaticBody2D"]
+polygon = PoolVector2Array( 0.2966, -7.56711, -6.14431, -5.26678, -6.51236, 5.22269, 0.0205612, 7.52302, 6.55348, 5.59075, 6.09342, -5.3588 )
 

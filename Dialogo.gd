@@ -15,30 +15,30 @@ func _ready():
 	dialogos=JSON.parse(archivo.get_as_text()).result
 	current=dialogos[contexto] #Carga el bloque de conversaciones del contexto
 	texto=current[linea][1]
-	$Panel/Nombre.text=current[linea][0]#Set titulo y texto
+	$Center/Panel/Nombre.text=current[linea][0]#Set titulo y texto
 	# 0=Nombre 1=Texto
 	# 2= Futuro set de talksprite?
-	$SlideDown.interpolate_property($Label,"position",Vector2(0, 0), Vector2(100, 100), 1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$SlideDown.start()
 
 func _process(delta):
-	$Panel/Dialog.text=texto.substr(0,fin)
+	$Center/Panel/Dialog.text=texto.substr(0,fin)
 	if fin>len(texto):#Bloqueo para no pasar rapido
-		$Panel/Status.text="›››"
+		$Center/Panel/Status.text="›››"
 		$Voice.stop()
 		if Input.is_action_just_pressed("ui_accept") and linea<len(current)-1:#si esta presionado y el index no se pasa
 			linea+=1
 			texto=current[linea][1]
-			$Panel/Nombre.text=current[linea][0]#Set titulo y texto
+			$Center/Panel/Nombre.text=current[linea][0]#Set titulo y texto
 			fin=0
 		else:
 			if linea==len(current)-1&&!endDialog:
-				$Panel/Status.text="-->"
-				if  Input.is_action_just_pressed("ui_accept"):
+				$Center/Panel/Status.text="-->"
+				if Input.is_action_just_pressed("ui_accept"):
 					endDialog=true
+					$SlideDown.interpolate_property($Center/Panel,"position",$Center/Panel.position, Vector2(500, 800), 1,Tween.TRANS_LINEAR, Tween.EASE_IN)
+					$SlideDown.start()
 					$Label.text="End"
 	else:
-		$Panel/Status.text="..."
+		$Center/Panel/Status.text="..."
 
 func Letra_a_letra(): #Y ademas detecta cuando no caben las letras, manualmente
 	if fin<=len(texto):
