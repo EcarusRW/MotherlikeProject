@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
-run/main_scene="res://MainMenu.tscn"
+config/name="Gaia's Vigil"
+run/main_scene="res://menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
