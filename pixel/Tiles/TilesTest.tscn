@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://pixel/Tiles/test_tileset.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.07308, 8.01253 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,6 +27,6 @@ region_rect = Rect2( 64, 32, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walk"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walk/StaticBody2D"]
-polygon = PoolVector2Array( 0.2966, -7.56711, -6.14431, -5.26678, -6.51236, 5.22269, 0.0205612, 7.52302, 6.55348, 5.59075, 6.09342, -5.3588 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walk/StaticBody2D"]
+shape = SubResource( 1 )
 

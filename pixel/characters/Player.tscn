@@ -128,8 +128,8 @@ tracks/0/keys = {
 "values": [ 50, 51, 52, 53, 54, 55 ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 4.36783, 2.85122 )
+[sub_resource type="CircleShape2D" id=9]
+radius = 2.74578
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -154,7 +154,7 @@ anims/Walkupleft = SubResource( 7 )
 anims/Walkupright = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.74028, 35.4708 )
+position = Vector2( 0.74028, 39.7324 )
 scale = Vector2( 2.32353, 3.4194 )
 shape = SubResource( 9 )
 
