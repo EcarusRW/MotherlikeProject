@@ -41,10 +41,10 @@ position = Vector2( -17.4047, 490.663 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 708.324
-margin_top = 377.343
-margin_right = 749.324
-margin_bottom = 408.343
+margin_left = 708.787
+margin_top = 399.118
+margin_right = 749.787
+margin_bottom = 430.118
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 522.769, 310.896 )
