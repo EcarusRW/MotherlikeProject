@@ -3,9 +3,10 @@
 [ext_resource path="res://pixel/objects/room_items.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24.2141, 10 )
+extents = Vector2( 24.2141, 11.9711 )
 
 [node name="Table_blinds" type="Node2D"]
+z_index = -1
 
 [node name="room_items" type="Sprite" parent="."]
 position = Vector2( 65.5497, 0.985199 )
@@ -15,8 +16,9 @@ region_rect = Rect2( 246, 51.14, 54, 86 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 65.4336, 23.8402 )
+position = Vector2( 65.4336, 22.0796 )
 shape = SubResource( 1 )
 

@@ -5,7 +5,7 @@ var items
 func _ready():
 	items=[]
 	#populate_with_items()
-	var box=preload("res://pixel/objects/Box.tscn")
+	var box=preload("res://pixel/objects/Ball.tscn")
 	for n in range(0,5):
 		randomize()
 		var instanced_box=box.instance()
@@ -20,7 +20,6 @@ func _on_Area2D_body_entered(body):
 		timer.connect("timeout",self,"item_despawn",[body,timer])
 		$".".add_child(timer)
 		timer.start()
-		
 
 func _on_Area2D_body_exited(body):
 	if body is RigidBody2D:
@@ -52,7 +51,7 @@ func populate_with_items():
 	var triangle_array=split_triangles($SpawnArea)
 	var root=$"."
 	var total_items=randi()%7+5
-	var box=preload("res://pixel/objects/Box.tscn")
+	var box=preload("res://pixel/objects/Ball.tscn")
 	for i in range(0,total_items):
 		randomize()
 		#Choose triangle

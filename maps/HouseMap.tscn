@@ -10,13 +10,9 @@
 position = Vector2( 16.9956, 29.585 )
 collision_layer = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Goals" index="0"]
-position = Vector2( 4.8054, -20.8234 )
-polygon = PoolVector2Array( -86.4125, 22.4205, -101.363, 58.194, -69.8606, 59.2619, -71.4624, 20.2847 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Goals" index="1"]
-position = Vector2( 74.0482, -47.4476 )
-polygon = PoolVector2Array( -92.2858, 25.0901, -94.9555, 33.0992, -77.1233, 34.4276, -54.2516, 32.878, -57.6366, 25.0664, -76.0555, 23.215 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Goals" index="0"]
+position = Vector2( 77.6744, -54.8051 )
+polygon = PoolVector2Array( -98.6016, 23.881, -101.998, 40.8619, -56.7153, 40.1072, -58.9795, 24.2583 )
 
 [node name="SpawnArea" parent="." index="2"]
 visible = false
@@ -25,7 +21,7 @@ color = Color( 1, 1, 1, 0.215686 )
 polygon = PoolVector2Array( 10.4241, 83.7562, 171.674, 85.2089, 200.728, 167.286, 189.106, 177.455, -7.73466, 178.908, -18.6299, 162.202 )
 
 [node name="House" parent="." index="3" instance=ExtResource( 2 )]
-position = Vector2( -24.8135, 15.7656 )
+position = Vector2( -10.9669, 14.1366 )
 
 [node name="Label" type="Label" parent="." index="4"]
 margin_left = 58.1988
@@ -34,6 +30,6 @@ margin_right = 98.1988
 margin_bottom = 36.9592
 
 [node name="Table_blinds" parent="." index="5" instance=ExtResource( 3 )]
-position = Vector2( -67.7364, -38.5871 )
-z_index = -1
+position = Vector2( -68.4361, -42.0779 )
+z_index = 1
 

@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://pixel/Tiles/test_tileset.png" type="Texture" id=1]
+[ext_resource path="res://pixel/objects/room_items.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.06345, 8.04026 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 11.3304
 
-[node name="Box" type="RigidBody2D"]
-z_index = -1
+[node name="Ball" type="RigidBody2D"]
 input_pickable = true
 gravity_scale = 0.0
 linear_damp = 10.0
@@ -16,9 +15,9 @@ angular_damp = 10.0
 position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 208, 16, 16 )
+region_rect = Rect2( 313.185, 151.361, 32.5, 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.8147e-06, -1.98464 )
+position = Vector2( 0.148102, -2.87329 )
 shape = SubResource( 1 )
 
