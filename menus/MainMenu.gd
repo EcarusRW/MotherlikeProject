@@ -21,8 +21,6 @@ func on_option_press(which):
 	match which.get_name():
 		"NewGameButton":
 			path+="GeneralMenu.tscn"
-		"ContinueButton":
-			path+="GeneralMenu.tscn"
 		"OptionsButton":
 			path+="GeneralMenu.tscn"
 		"ExitButton":
