@@ -3,21 +3,21 @@
 [ext_resource path="res://pixel/objects/room_items.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 11.3304
+radius = 8.3254
 
 [node name="Ball" type="RigidBody2D"]
 input_pickable = true
 gravity_scale = 0.0
-linear_damp = 10.0
+linear_damp = 1.84
 angular_damp = 10.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -2 )
+position = Vector2( 6.22051, 5.10915 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 313.185, 151.361, 32.5, 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.148102, -2.87329 )
+position = Vector2( -3.63588e-06, -0.0592489 )
 shape = SubResource( 1 )
 

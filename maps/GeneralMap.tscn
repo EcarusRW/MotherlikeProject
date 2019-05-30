@@ -11,9 +11,5 @@ position = Vector2( -0.0959473, 0.469818 )
 
 [node name="Goals" type="Area2D" parent="."]
 
-[node name="SpawnArea" type="Polygon2D" parent="."]
-position = Vector2( -1.14667, 40.4326 )
-polygon = PoolVector2Array( 5.27127, -54.2931, -51.0508, 28.3126, 43.758, 13.2934 )
-
 [connection signal="body_entered" from="Goals" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Goals" to="." method="_on_Area2D_body_exited"]
