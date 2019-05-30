@@ -1,65 +1,51 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://fonts/prstartk.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://pixel/bg/title_background.png" type="Texture" id=2]
 [ext_resource path="res://fonts/Button_Font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://tests/placeholder.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 33
-font_data = ExtResource( 2 )
+[ext_resource path="res://fonts/prstartk.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 50.0
-margin_right = -20.0
+margin_right = -40.0
 margin_bottom = -30.0
 
 [node name="TitleMenus" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 984.0
+margin_right = 964.0
 margin_bottom = 520.0
 custom_constants/separation = 50
 
-[node name="Title" type="Label" parent="MarginContainer/TitleMenus"]
-margin_left = 294.0
-margin_right = 690.0
-margin_bottom = 34.0
-size_flags_horizontal = 4
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 7
-custom_constants/shadow_offset_y = 7
-text = "Gaia's Vigil"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TitleMenus"]
-margin_top = 84.0
-margin_right = 984.0
+[node name="Menus" type="VBoxContainer" parent="MarginContainer/TitleMenus"]
+margin_left = 732.0
+margin_top = 419.0
+margin_right = 964.0
 margin_bottom = 520.0
-size_flags_vertical = 3
-custom_constants/separation = 31
-
-[node name="Menus" type="VBoxContainer" parent="MarginContainer/TitleMenus/HBoxContainer"]
-margin_top = 335.0
-margin_right = 232.0
-margin_bottom = 436.0
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 10
 custom_constants/separation = 10
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/TitleMenus/HBoxContainer/Menus" groups=[
+[node name="NewGameButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
 margin_right = 232.0
@@ -70,7 +56,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Nuevo juego"
 flat = true
 
-[node name="Label" type="Label" parent="MarginContainer/TitleMenus/HBoxContainer/Menus/NewGameButton"]
+[node name="Label" type="Label" parent="MarginContainer/TitleMenus/Menus/NewGameButton"]
 margin_left = 6.0
 margin_top = 3.0
 margin_right = 226.0
@@ -80,7 +66,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 3
 text = "Nuevo juego"
 
-[node name="HelpButton" type="Button" parent="MarginContainer/TitleMenus/HBoxContainer/Menus" groups=[
+[node name="HelpButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
 margin_left = 120.0
@@ -93,7 +79,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Ayuda"
 flat = true
 
-[node name="Label" type="Label" parent="MarginContainer/TitleMenus/HBoxContainer/Menus/HelpButton"]
+[node name="Label" type="Label" parent="MarginContainer/TitleMenus/Menus/HelpButton"]
 margin_left = 6.0
 margin_top = 3.0
 margin_right = 166.0
@@ -103,7 +89,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 3
 text = "Ayuda"
 
-[node name="ExitButton" type="Button" parent="MarginContainer/TitleMenus/HBoxContainer/Menus" groups=[
+[node name="ExitButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
 margin_left = 120.0
@@ -116,7 +102,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Salir"
 flat = true
 
-[node name="Label" type="Label" parent="MarginContainer/TitleMenus/HBoxContainer/Menus/ExitButton"]
+[node name="Label" type="Label" parent="MarginContainer/TitleMenus/Menus/ExitButton"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 105.0
@@ -125,14 +111,6 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 3
 text = "Salir"
-
-[node name="placeholder" type="TextureRect" parent="MarginContainer/TitleMenus/HBoxContainer"]
-margin_left = 263.0
-margin_right = 984.0
-margin_bottom = 436.0
-size_flags_horizontal = 11
-texture = ExtResource( 4 )
-stretch_mode = 1
 
 [node name="Selector" type="Label" parent="."]
 visible = false

@@ -1,8 +1,6 @@
 extends Control
-var testDebug
 
 func _ready():
-	testDebug=$MarginContainer/TitleMenus/Title
 	for option in get_tree().get_nodes_in_group("MainMenuOptions"):
 		option.connect("mouse_entered",self, "on_option_mouse_entered",[option])
 		option.connect("mouse_exited",self, "on_option_mouse_exited",[option])

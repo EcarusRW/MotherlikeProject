@@ -7,13 +7,15 @@
 [ext_resource path="res://fonts/Dialog_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://fonts/Dialog_name_font.tres" type="DynamicFont" id=6]
 
-[node name="Dialogo" type="CanvasLayer"]
+[node name="Dialog" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
 volume_db = -17.0
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = 320.675
 margin_top = 327.356
 margin_right = 360.675
@@ -24,7 +26,7 @@ text = "En proceso"
 [node name="SlideDown" type="Tween" parent="."]
 
 [node name="Panel" type="Sprite" parent="."]
-position = Vector2( 496.32, 509.325 )
+position = Vector2( 517.749, 505.429 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 region_enabled = true

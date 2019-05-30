@@ -86,3 +86,9 @@ func _tomar_un_respiro():
 
 func _teletransporte(posVector):
 	position=posVector
+
+func pause_player():
+	get_tree().paused=true
+
+func resume_player():
+	get_tree().paused=false

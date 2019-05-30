@@ -1,7 +1,7 @@
 extends Node
 
 var texto
-var contexto="debug1"
+var context
 var fin=0
 var current
 var linea=0
@@ -13,13 +13,13 @@ func _ready():
 	var archivo=File.new()
 	archivo.open("res://json//dialogos.json",File.READ)
 	dialogos=JSON.parse(archivo.get_as_text()).result
-	current=dialogos[contexto] #Carga el bloque de conversaciones del contexto
+	current=dialogos[context] #Carga el bloque de conversaciones del contexto
 	texto=current[linea][1]
 	$Panel/Nombre.text=current[linea][0]#Set titulo y texto
 	# 0=Nombre 1=Texto
 	# 2= Futuro set de talksprite?
 
-func _process(delta):
+func _process(_delta):
 	$Panel/Dialog.text=texto.substr(0,fin)
 	if fin>len(texto):#Bloqueo para no pasar rapido
 		$Panel/Status.text="›››"
@@ -51,5 +51,6 @@ func Letra_a_letra(): #Y ademas detecta cuando no caben las letras, manualmente
 		listo_salto=false
 	$Voice.play()
 
-func _on_SlideDown_tween_completed(object, key):
+func _on_SlideDown_tween_completed(_object, _key):
 	queue_free()
+	get_tree().paused=false

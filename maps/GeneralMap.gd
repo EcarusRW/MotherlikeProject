@@ -1,6 +1,9 @@
 extends Node2D
 
 var items
+onready var root=$"."
+var dialog= preload("res://utils/Dialog.tscn")
+var box=preload("res://pixel/objects/Ball.tscn")
 
 func _ready():
 	items=[]
@@ -26,11 +29,16 @@ func item_despawn(body,timer):
 	body.queue_free()
 	timer.stop()
 	timer.queue_free()
+	
+
+func instance_dialog(context):
+	var dialog_instance= dialog.instance()
+	dialog_instance.context=context
+	root.add_child(dialog_instance)
+	$Player.pause_player()
 
 func populate_with_items():
-	var root=$"."
 	var total_items=randi()%7+5
-	var box=preload("res://pixel/objects/Ball.tscn")
 	for i in range(0,total_items):
 		var instanced_box=box.instance()
 		var rnd_x=(randf()*($Spawn_end.position.x-$Spawn_begin.position.x))+$Spawn_begin.position.x
