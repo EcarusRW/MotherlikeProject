@@ -61,7 +61,7 @@ func _physics_process(_delta):
 	direccion= direccion.normalized()*velocidad
 	direccion=move_and_slide(direccion)
 
-func _input(event):
+func _input(_event):
 	var state = "Walk"
 	if Input.is_action_pressed("ui_up"):
 		state += "up"

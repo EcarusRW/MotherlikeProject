@@ -2,8 +2,9 @@ extends Node2D
 
 var items
 onready var root=$"."
-var dialog= preload("res://utils/Dialog.tscn")
-var box=preload("res://pixel/objects/Ball.tscn")
+onready var dialog=preload("res://utils/Dialog.tscn")
+onready var box=preload("res://pixel/objects/Ball.tscn")
+signal time_bonus
 
 func _ready():
 	items=[]
@@ -13,7 +14,6 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body is RigidBody2D:
 		items.append(body)
-		$Label.text=str(items)
 		var timer=Timer.new()
 		timer.set_wait_time(0.6)
 		timer.connect("timeout",self,"item_despawn",[body,timer])
@@ -23,14 +23,13 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body is RigidBody2D:
 		items.erase(body)
-		$Label.text=str(items)
+		$TimeControl.add_time(get_time_score(body))
 
 func item_despawn(body,timer):
 	body.queue_free()
 	timer.stop()
 	timer.queue_free()
 	
-
 func instance_dialog(context):
 	var dialog_instance= dialog.instance()
 	dialog_instance.context=context
@@ -46,6 +45,18 @@ func populate_with_items():
 		instanced_box.position=Vector2(rnd_x,rnd_y)
 		root.add_child(instanced_box)
 
+func get_time_score(item_type):
+	var time=0
+	var item_param=item_type.get_name().split("@")
+	var item_name
+	if len(item_param)>1:
+		item_name=item_param[1]
+	else:
+		item_name=item_param[0]
+	match item_name:
+		"Ball":
+			time=5
+	return time
 #Not used functions
 func split_triangles(poly):#Fragment polygon (concave) into triangles
 	var apex_array=poly.polygon

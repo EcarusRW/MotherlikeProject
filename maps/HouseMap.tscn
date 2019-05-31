@@ -4,7 +4,7 @@
 [ext_resource path="res://maps/Bedroom.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pixel/objects/Table_blinds.tscn" type="PackedScene" id=3]
 
-[node name="HouseMap" instance=ExtResource( 1 )]
+[node name="HouseMap" index="0" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." index="0"]
 position = Vector2( 78.5097, 131.109 )
@@ -20,25 +20,13 @@ polygon = PoolVector2Array( -98.6016, 23.881, -101.998, 40.8619, -56.7153, 40.10
 [node name="House" parent="." index="2" instance=ExtResource( 2 )]
 position = Vector2( 255.271, 157.635 )
 
-[node name="Label" type="Label" parent="." index="3"]
-margin_left = 108.319
-margin_top = 151.02
-margin_right = 148.319
-margin_bottom = 165.02
-
-[node name="Label2" type="Label" parent="." index="4"]
-margin_left = 139.928
-margin_top = 176.748
-margin_right = 179.928
-margin_bottom = 190.748
-
-[node name="Table_blinds" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Table_blinds" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 197.802, 101.42 )
 z_index = 1
 
-[node name="Spawn_begin" type="Position2D" parent="." index="6"]
+[node name="Spawn_begin" type="Position2D" parent="." index="4"]
 position = Vector2( 103.289, 145.334 )
 
-[node name="Spawn_end" type="Position2D" parent="." index="7"]
+[node name="Spawn_end" type="Position2D" parent="." index="5"]
 position = Vector2( 433.986, 218.41 )
 
