@@ -5,9 +5,9 @@ onready var end_dialog=preload("res://menus/EndMenu.tscn")
 
 func _ready():
 	if Difficulty.difficulty=="hard":
-		$GeneralTime.wait_time=20
+		$GeneralTime.wait_time=50
 	else:
-		$GeneralTime.wait_time=40
+		$GeneralTime.wait_time=25
 	$GeneralTime.start()
 func _process(_delta):
 	time_left=$GeneralTime.time_left

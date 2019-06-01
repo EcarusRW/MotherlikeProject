@@ -15,5 +15,27 @@
     ["TRINA","No solo JASON"],
     ["JASON","09877654321asdfgh´ç´+`´_:`"],
     ["JASON","Dias buenos dias "]
+  ],
+  "easy_start":[
+    ["TRINA","..."],
+    ["TRINA","Vaya"],
+    ["TRINA","Creo que mi madre venia ahora..."],
+    ["TRINA","¡Oh no!"],
+    ["TRINA","¡Rapido, pon todo debajo de lo que veas!"]
+  ],
+  "easy_end":[
+    ["TRINA","!Uff¡ Menos mal que me ha dado tiempo"],
+    ["TRINA","Me tumbare en la cama"],
+    ["TRINA","Y hare como que no ha pasado nada"]
+  ],
+  "hard_start":[
+    ["TRINA","¡Oh no!"],
+    ["TRINA","Creo que alguien esta muy cabreada"],
+    ["TRINA","¡Rapido, pon todo debajo de lo que veas!"]
+  ],
+  "hard_end":[
+    ["TRINA","Por poco..."],
+    ["TRINA","Espera... Esta volviendo al salon"],
+    ["TRINA","No me lo puedo creer"]
   ]
 }

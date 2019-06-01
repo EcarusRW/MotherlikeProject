@@ -14,7 +14,10 @@ func _ready():
 	items=[]
 	randomize()
 	populate_with_items()
-	#instance_dialog("debug1",true)
+	if Difficulty.difficulty=="hard":
+		instance_dialog("hard_start",true)
+	else:
+		instance_dialog("easy_start",true)
 
 func _process(_delta):
 	if len(items) >= total_items && !finished_run:
@@ -23,7 +26,10 @@ func _process(_delta):
 		end.change_content("win")
 		root.add_child(end)
 		get_tree().paused=true
-		instance_dialog("debug1",false)
+		if Difficulty.difficulty=="hard":
+			instance_dialog("hard_end",false)
+		else:
+			instance_dialog("easy_end",false)
 
 func _on_Area2D_body_entered(body):
 	if body is RigidBody2D:

@@ -30,7 +30,8 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_constants/line_separation = 5
-bbcode_text = "¡Trina está en peligo, sus padres estan al llegar y ella no
+bbcode_enabled = true
+bbcode_text = "!Trina está en peligo, sus padres estan al llegar y ella no
 ha recogido su habitación! ¿Que pasara cuando ellos descubran el lío que ha montado? No quiero ni pensarlo.
 
 Pero ella puede evitarlo, si recoge su habitación antes del tiempo asignado aun puede salvarse una buena bronca.
@@ -42,7 +43,8 @@ Puedes jugar con mando o con teclado:
 
 			--Mando--			 --Teclado--
 Movimiento  Joistick izquierdo	WASD o flechas
-Aceptar	 Barra espaciadora	 Boton A"
+Aceptar	 Boton A			   Barra espaciadora	
+Correr	  Gatillo izquierdo	 Shift"
 text = "¡Trina está en peligo, sus padres estan al llegar y ella no
 ha recogido su habitación! ¿Que pasara cuando ellos descubran el lío que ha montado? No quiero ni pensarlo.
 
@@ -55,5 +57,6 @@ Puedes jugar con mando o con teclado:
 
 			--Mando--			 --Teclado--
 Movimiento  Joistick izquierdo	WASD o flechas
-Aceptar	 Barra espaciadora	 Boton A"
+Aceptar	 Boton A			   Barra espaciadora	
+Correr	  Gatillo izquierdo	 Shift"
 
