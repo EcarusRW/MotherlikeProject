@@ -18,9 +18,10 @@ func on_option_press(which):
 	var path="res://menus/"
 	match which.get_name():
 		"NewGameButton":
-			path+="GeneralMenu.tscn"
+			path+="NewGame.tscn"
 		"HelpButton":
-			path+="GeneralMenu.tscn"
-		"ExitButton":
-			path+="GeneralMenu.tscn"
+			path+="HelpMenu.tscn"
 	get_tree().change_scene(path)
+
+func _on_ExitButton_pressed():
+	get_tree().quit()

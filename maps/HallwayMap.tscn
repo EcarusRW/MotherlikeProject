@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://pixel/characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://maps/Hallway.tscn" type="PackedScene" id=2]
+[ext_resource path="res://utils/TimeControl.tscn" type="PackedScene" id=3]
+
+[node name="HallwayMap" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 137.517, 183.177 )
+
+[node name="Hallway" parent="." instance=ExtResource( 2 )]
+position = Vector2( 313.181, 186.326 )
+region_rect = Rect2( 28, 700.582, 468, 194 )
+
+[node name="TimeControl" parent="." instance=ExtResource( 3 )]
+

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://pixel/tiles/rooms_and_furniture.png" type="Texture" id=1]
+
+[node name="Lamp" type="Sprite"]
+position = Vector2( 418.838, 115.236 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 642.297, 545.282, 31, 81.667 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 3.17773, 4.76659 )
+polygon = PoolVector2Array( -9.03528, 19.1129, -2.67987, 18.3185, -0.29657, -13.856, 1.68951, 17.9213, 7.25055, 18.3185, 12.4144, 29.8377, -1.091, 33.8099, -13.4047, 30.6322 )
+

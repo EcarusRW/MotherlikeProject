@@ -19,6 +19,10 @@ config/name="Gaia's Vigil"
 run/main_scene="res://menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Difficulty="*res://utils/Difficulty.gd"
+
 [display]
 
 window/size/resizable=false
@@ -93,4 +97,5 @@ ui_sprint={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.133333, 0.12549, 0.203922, 1 )
 environment/default_environment="res://default_env.tres"

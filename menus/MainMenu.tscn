@@ -36,8 +36,8 @@ margin_bottom = 520.0
 custom_constants/separation = 50
 
 [node name="Menus" type="VBoxContainer" parent="MarginContainer/TitleMenus"]
-margin_left = 732.0
-margin_top = 419.0
+margin_left = 688.0
+margin_top = 410.0
 margin_right = 964.0
 margin_bottom = 520.0
 size_flags_horizontal = 8
@@ -48,11 +48,13 @@ alignment = 1
 [node name="NewGameButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
-margin_right = 232.0
-margin_bottom = 27.0
+margin_right = 276.0
+margin_bottom = 30.0
+focus_mode = 0
 mouse_filter = 1
 size_flags_horizontal = 8
 custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "Nuevo juego"
 flat = true
 
@@ -69,13 +71,15 @@ text = "Nuevo juego"
 [node name="HelpButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
-margin_left = 120.0
-margin_top = 37.0
-margin_right = 232.0
-margin_bottom = 64.0
+margin_left = 144.0
+margin_top = 40.0
+margin_right = 276.0
+margin_bottom = 70.0
+focus_mode = 0
 mouse_filter = 1
 size_flags_horizontal = 8
 custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "Ayuda"
 flat = true
 
@@ -92,13 +96,15 @@ text = "Ayuda"
 [node name="ExitButton" type="Button" parent="MarginContainer/TitleMenus/Menus" groups=[
 "MainMenuOptions",
 ]]
-margin_left = 120.0
-margin_top = 74.0
-margin_right = 232.0
-margin_bottom = 101.0
+margin_left = 144.0
+margin_top = 80.0
+margin_right = 276.0
+margin_bottom = 110.0
+focus_mode = 0
 mouse_filter = 1
 size_flags_horizontal = 8
 custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "Salir"
 flat = true
 
@@ -121,3 +127,4 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 3
 text = "*"
 
+[connection signal="pressed" from="MarginContainer/TitleMenus/Menus/ExitButton" to="." method="_on_ExitButton_pressed"]

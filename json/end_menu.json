@@ -1,0 +1,4 @@
+{
+  "win":["Has ganado","Has conseguido dejar la habitación limpia, ¡Buen trabajo!"],
+  "lose":["Has perdido","No te preocupes, siempre puedes intentarlo de nuevo"]
+}

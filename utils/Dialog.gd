@@ -1,5 +1,6 @@
 extends Node
 
+var unpause_game=true
 var texto
 var context
 var fin=0
@@ -10,6 +11,7 @@ var listo_salto=false
 var endDialog=false
 
 func _ready():
+	get_tree().paused=true
 	var archivo=File.new()
 	archivo.open("res://json//dialogos.json",File.READ)
 	dialogos=JSON.parse(archivo.get_as_text()).result
@@ -52,5 +54,6 @@ func Letra_a_letra(): #Y ademas detecta cuando no caben las letras, manualmente
 	$Voice.play()
 
 func _on_SlideDown_tween_completed(_object, _key):
+	if unpause_game:
+		get_tree().paused=false
 	queue_free()
-	get_tree().paused=false

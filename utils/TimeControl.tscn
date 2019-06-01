@@ -19,10 +19,9 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "time"
 
 [node name="GeneralTime" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
-autostart = true
 
+[connection signal="timeout" from="GeneralTime" to="." method="_on_GeneralTime_timeout"]
